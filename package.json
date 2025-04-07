@@ -1,0 +1,25 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "This is node js file for docker testing",
+  "main": "index.js",
+  "scripts": {
+     "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apsinghrana100/docker.git"
+  },
+  "author": "Ajay pratap singh",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/apsinghrana100/docker/issues"
+  },
+  "homepage": "https://github.com/apsinghrana100/docker#readme"
+}
