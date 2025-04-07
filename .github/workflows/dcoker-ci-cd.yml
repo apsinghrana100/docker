@@ -1,0 +1,25 @@
+name: Basic ci/cd pipeline docker registry
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checkout code
+        uses: action/checkout@v3
+
+      - name: login to docker hub
+        run: echo "${{secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: buid docker image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/my-app:latest .
+
+      - name: push docker image to docker registry
+        run: docker push ${{secrets.DOCKER_USERNAME}}/my-app:latest
+
+      
+    
